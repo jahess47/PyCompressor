@@ -8,28 +8,11 @@ class Compressor:
     def compress(self):
         string = input("Please enter string to be compressed: ")
 
-        count = 0
-        initial_value = string[0]
-        new_string = ""
+        count = 0                  # Holds the number of indexes the character is the same
+        initial_value = string[0]  # Holds the initial character within each "block"
+        new_string = ""            # Holds the newly compressed string
 
-        """
-        if (chars[i] == initialChar) {
-                indexCount++;
-
-                if (i == chars.length - 1) {
-                    newDna += (Integer.toString(indexCount) + Character.toString(initialChar));
-                }
-            } else {
-                newDna += (Integer.toString(indexCount) + Character.toString(initialChar));
-                initialChar = chars[i];
-
-                if (i == chars.length - 1) {
-                    newDna += (Integer.toString(1) + Character.toString(initialChar));
-                }
-
-                indexCount = 1;
-            }
-        """
+        # Iterate through string and populate new_string with the correct values
         for i in range(0, len(string)):
             if string[i] is initial_value:
                 count += 1
@@ -52,9 +35,10 @@ class Compressor:
     def decompress(self):
         string = input("Please enter the string to be decompressed: ")
 
-        count = 0
-        new_string = ""
+        count = 0        # Holds the number of indexes that there's a number
+        new_string = ""  # Holds the newly decompressed string
 
+        # Iterate through string and populate new_string with the correct values
         for i in range(0, len(string)):
             if string[i].isnumeric():
                 count += 1
