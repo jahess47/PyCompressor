@@ -1,4 +1,4 @@
-from Compressor import Compressor
+from bin.Compressor import Compressor
 from sys import exit
 
 c = Compressor()
